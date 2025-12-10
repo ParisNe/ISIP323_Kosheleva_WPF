@@ -130,5 +130,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\7b9fb24cea4dc2986ef51af1da6a43a5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\6905972dded36e3b06f5d39cecd6d4bf.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\6cff2d2ccb62963eeb55b0b68e9ac7df.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\1e974408d5b07d80de6e010198e886c0.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

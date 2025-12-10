@@ -6,9 +6,32 @@
       xmlns:local="clr-namespace:ISIP323_Kosheleva_WPF.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Step1">
+      Title="Step1" Background="White">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="ВЫБЕРИ СВОЕГО БОЙЦА" HorizontalAlignment="Center" FontSize="22" Margin="5"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel>
+            <Image x:Name="BMW" Source="/Images/6905972dded36e3b06f5d39cecd6d4bf.jpg" Height="120" Width="185" Margin="5"/>
+                <RadioButton HorizontalAlignment="Center" GroupName="ModelButton"  Content="Нормальная Бэха" Margin="5" FontSize="18"/>
+            </StackPanel>
+            <StackPanel>
+                <Image Source="/Images/1e974408d5b07d80de6e010198e886c0.jpg" Height="120" Width="185" Margin="5"/>
+                <RadioButton HorizontalAlignment="Center" GroupName="ModelButton" Content="принцесса" Margin="5" FontSize="18"/>
+            </StackPanel>
+            <StackPanel>
+                <Image Source="/Images/6cff2d2ccb62963eeb55b0b68e9ac7df.jpg" Height="120" Width="185" Margin="5"/>
+                <RadioButton HorizontalAlignment="Center" GroupName="ModelButton" Content="Скороходы" Margin="5" FontSize="18"/>
+            </StackPanel>
+            <StackPanel>
+                <Image  Source="/Images/7b9fb24cea4dc2986ef51af1da6a43a5.jpg" Height="120" Width="185" Margin="5"/>
+                <RadioButton HorizontalAlignment="Center" GroupName="ModelButton" Content="базовый москвич" Margin="5" FontSize="18"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

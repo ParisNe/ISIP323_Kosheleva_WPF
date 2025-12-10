@@ -21,5 +21,23 @@ namespace ISIP323_Kosheleva_WPF
         {
             InitializeComponent();
         }
+
+        private void MainFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+            BackButton.Visibility = MainFrame.CanGoBack ? Visibility.Visible : Visibility.Collapsed;
+
+            if (e.Content is Page page)
+            {
+                TitleTextBlock.Text = page.Title;
+            }
+        }
+
+        private void BackButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (MainFrame.CanGoBack)
+            {
+                MainFrame.GoBack();
+            }
+        }
     }
 }
