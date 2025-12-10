@@ -13,11 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ISIP323_Kosheleva_WPF
+namespace ISIP323_Kosheleva_WPF.Pages
 {
-    public partial class MainWindow : Window
+    /// <summary>
+    /// Логика взаимодействия для Step1.xaml
+    /// </summary>
+    public partial class Step1 : Page
     {
-        public MainWindow()
+        public Step1()
         {
             InitializeComponent();
         }
