@@ -26,10 +26,7 @@ namespace ISIP323_Kosheleva_WPF
         {
             BackButton.Visibility = MainFrame.CanGoBack ? Visibility.Visible : Visibility.Collapsed;
 
-            if (e.Content is Page page)
-            {
-                TitleTextBlock.Text = page.Title;
-            }
+            
         }
 
         private void BackButton_OnClick(object sender, RoutedEventArgs e)

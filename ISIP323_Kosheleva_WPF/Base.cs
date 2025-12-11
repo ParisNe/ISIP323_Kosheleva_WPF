@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace ISIP323_Kosheleva_WPF
 {
-    static class Base
+    public static class Base
     {
-        static string Model {  get; set; }
-        static string EngineType { get; set; }
-        static string Color { get; set; }
-        static List<string> AddOptions { get; set; }
-        static double Sum = 0;
-        static double r = 0; //годовая ставка 
-        static double C = 0; //цена на авто
-        static double P = C * 30; //первоначальный взнос
+        public static string Model {  get; set; }
+        public static string EngineType { get; set; }
+        public static string Color { get; set; }
+        public static List<string> AddOptions { get; set; }
+        public static double Sum = 0;
+        public static double r = 0; //годовая ставка 
+        public static double C = 0; //цена на авто
+        public static double P = C * 30; //первоначальный взнос
         //контактные данные
-        static string Name { get; set; }
-        static string Telephone { get; set; }
-        static string Emale { get; set; }
+        public static string Name { get; set; }
+        public static string Telephone { get; set; }
+        public static string Emale { get; set; }
     }
 }
