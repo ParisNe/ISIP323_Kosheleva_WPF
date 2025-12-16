@@ -44,24 +44,26 @@
 
         </Grid>
 
-        <Grid Margin="10" Grid.Row="1" Visibility="Collapsed" x:Name="GridBottom">
+        <Grid Visibility="Collapsed" Margin="10" Grid.Row="1"  x:Name="GridBottom">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.6*" />
                 <ColumnDefinition Width="0.4*"/>
             </Grid.ColumnDefinitions>
             <Image x:Name="BossImage" />
             <StackPanel Grid.Column="1">
-                <ListBox  Height="100" Width="250" SelectionChanged="ListBox_SelectionChanged">
-                    <ListBoxItem x:Name="ListBoxItem1">norm</ListBoxItem>
-                    <ListBoxItem x:Name="ListBoxItem2">rare</ListBoxItem>
-                    <ListBoxItem x:Name="ListBoxItem3" >epic</ListBoxItem>
-                    <ListBoxItem x:Name="ListBoxItem4" >mimimimimimmi</ListBoxItem>
-                    <ListBoxItem x:Name="ListBoxItem5">legendary</ListBoxItem>
+                <ListBox FontSize="18" Height="100" Width="250" SelectionChanged="ListBox_SelectionChanged">
+                    <ListBoxItem x:Name="ListBoxItem1">norm +50k</ListBoxItem>
+                    <ListBoxItem x:Name="ListBoxItem2">rare +65k</ListBoxItem>
+                    <ListBoxItem x:Name="ListBoxItem3" >epic +100k</ListBoxItem>
+                    <ListBoxItem x:Name="ListBoxItem4" >mimimimimimmi +333k</ListBoxItem>
+                    <ListBoxItem x:Name="ListBoxItem5">legendary +250k</ListBoxItem>
                 </ListBox>
-                <Label x:Name="tb" Content="Вы выбрали: "/>
+                <Label FontSize="20" x:Name="tb" Content="Вы выбрали: "/>
             </StackPanel>
 
-            <Button Visibility="Collapsed" x:Name="ButtonNext" VerticalAlignment="Bottom"  Content="Следщ" Grid.Column="1" Height="30" Width="250"/>
+            <Button Visibility="Collapsed" x:Name="ButtonNext" VerticalAlignment="Bottom"  
+        Content="Следщ" Grid.Column="1" Height="45" Width="230"
+        Click="ButtonNext_Click" FontSize="20"/>
         </Grid>
         
     </Grid>

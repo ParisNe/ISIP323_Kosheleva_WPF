@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
         
             <Button Grid.Column="0" x:Name="BackButton" Content="Назад" Click="BackButton_OnClick" Height="45" Width="120" Background="#FFC6B61F" Foreground="White"/>
-            <ProgressBar Grid.Column="1" Foreground="#FF505050" Height="55" Width="250" Background="#FFFDFF7C" Maximum="100" Minimum="0" />
+            <ProgressBar  x:Name="ProgressBar" Grid.Column="1" Foreground="#FF505050" Height="55" Width="250" Background="#FFFDFF7C" Maximum="100" Minimum="0" />
             <TextBlock Grid.Column="2" x:Name="Sum"  Text="Итог:" Margin="20" FontSize="20"/>
 
         <Frame Grid.ColumnSpan="3" x:Name="MainFrame" Grid.Row="1" Source="Pages/Step1.xaml" NavigationUIVisibility="Hidden" Navigated="MainFrame_Navigated"/>

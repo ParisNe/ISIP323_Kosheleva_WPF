@@ -6,9 +6,18 @@
       xmlns:local="clr-namespace:ISIP323_Kosheleva_WPF.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Step2">
+      Title="Step2" Background="Beige">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        
+        
         
     </Grid>
+    
 </Page>

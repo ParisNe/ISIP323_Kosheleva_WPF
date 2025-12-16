@@ -27,10 +27,15 @@ namespace ISIP323_Kosheleva_WPF.Pages
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-                ListBoxItem choice = ((sender as ListBox).SelectedItem as ListBoxItem);
-                tb.Content = "Вы выбрали: " + choice.Content.ToString();
-                Base.EngineType = choice.Content.ToString(); 
+            if ((sender as ListBox).SelectedItem is ListBoxItem choice)
+            {
+                string selectedEngine = choice.Content.ToString();
+                tb.Content = "Вы выбрали: " + selectedEngine;
+                Base.EngineType = selectedEngine;
 
+                // Показываем кнопку тока когда выбрали двигатель
+                ButtonNext.Visibility = Visibility.Visible;
+            }
         }
 
         private void ModelButton1_Checked(object sender, RoutedEventArgs e)
@@ -59,7 +64,14 @@ namespace ISIP323_Kosheleva_WPF.Pages
 
         private void ButtonNext_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(Base.EngineType))
+            {
+                MessageBox.Show("Выберите тип двигателя!", "Внимание",
+                                MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
 
+            NavigationService?.Navigate(new Step2());
         }
     }
 }
