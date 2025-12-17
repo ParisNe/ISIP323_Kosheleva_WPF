@@ -6,38 +6,43 @@
       xmlns:local="clr-namespace:ISIP323_Kosheleva_WPF.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Step1" Background="#FF9E9E9D">
+      Title="Step1" Background="White">
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
-
+       
         <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="104*"/>
+                <RowDefinition Height="100*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.25*" />
                 <ColumnDefinition Width="0.25*"/>
                 <ColumnDefinition Width="0.25*"/>
                 <ColumnDefinition Width="0.25*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0" Margin="5,0,5,0">
+            
+            <StackPanel Grid.Column="0" Margin="5,0,6,0" Grid.RowSpan="3">
                 <Image  Source="/Images/1e974408d5b07d80de6e010198e886c0.jpg" x:Name="Image1"/>
                 <RadioButton Margin="5" Content="Принцесса 5.000.000р" HorizontalAlignment="Center" GroupName="ModelButton" FontSize="16" x:Name="ModelButton1" Checked="ModelButton1_Checked"/>
             </StackPanel>
 
-            <StackPanel Grid.Column="1" Margin="5,0,5,0">
+            <StackPanel Grid.Column="1" Margin="4,0,5,0" Grid.RowSpan="3">
                 <Image Source="/Images/6905972dded36e3b06f5d39cecd6d4bf.jpg" x:Name="Image2"/>
                 <RadioButton Margin="5" Content="Бэха 1.450.999р" HorizontalAlignment="Center" GroupName="ModelButton" FontSize="16" x:Name="ModelButton2" Checked="ModelButton2_Checked" />
             </StackPanel>
 
-            <StackPanel Grid.Column="2" Margin="5,0,5,0">
+            <StackPanel Grid.Column="2" Margin="5,0,4,0" Grid.RowSpan="3">
                 <Image  Source="/Images/6cff2d2ccb62963eeb55b0b68e9ac7df.jpg" x:Name="Image3"/>
                 <RadioButton Margin="5" Content="Скороход 2.280.000р"  HorizontalAlignment="Center" GroupName="ModelButton" FontSize="16" x:Name="ModelButton3" Checked="ModelButton3_Checked" />
             </StackPanel>
 
-            <StackPanel Grid.Column="3" Margin="5,0,5,0">
+            <StackPanel Grid.Column="3" Margin="6,0,5,0" Grid.RowSpan="3">
                 <Image  Source="/Images/7b9fb24cea4dc2986ef51af1da6a43a5.jpg" x:Name="Image4"/>
                 <RadioButton Margin="5" Content="Москвич обычный 1.488.000р" HorizontalAlignment="Center" GroupName="ModelButton" FontSize="16" x:Name="ModelButton4" Checked="ModelButton4_Checked" />
             </StackPanel>
@@ -65,7 +70,7 @@
         Content="Следщ" Grid.Column="1" Height="45" Width="230"
         Click="ButtonNext_Click" FontSize="20"/>
         </Grid>
-        
+
     </Grid>
 
 </Page>

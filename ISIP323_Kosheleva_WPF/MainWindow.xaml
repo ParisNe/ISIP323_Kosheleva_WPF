@@ -5,23 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ISIP323_Kosheleva_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Мое приложение" Height="500" Width="800"
+        WindowStartupLocation="CenterScreen">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.33*"/>
-            <ColumnDefinition Width="0.33*"/>
-            <ColumnDefinition Width="0.33*"/>
-        </Grid.ColumnDefinitions>
-        
-            <Button Grid.Column="0" x:Name="BackButton" Content="Назад" Click="BackButton_OnClick" Height="45" Width="120" Background="#FFC6B61F" Foreground="White"/>
-            <ProgressBar  x:Name="ProgressBar" Grid.Column="1" Foreground="#FF505050" Height="55" Width="250" Background="#FFFDFF7C" Maximum="100" Minimum="0" />
-            <TextBlock Grid.Column="2" x:Name="Sum"  Text="Итог:" Margin="20" FontSize="20"/>
 
-        <Frame Grid.ColumnSpan="3" x:Name="MainFrame" Grid.Row="1" Source="Pages/Step1.xaml" NavigationUIVisibility="Hidden" Navigated="MainFrame_Navigated"/>
+        <!-- Верхняя панель с элементами управления -->
+        <Border Grid.Row="0" Background="Gray" BorderBrush="#FFCCCCCC" BorderThickness="0,0,0,1">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Кнопка Назад -->
+                <Button Grid.Column="0" 
+                        x:Name="BackButton" 
+                        Content="Назад" 
+                        Click="BackButton_OnClick"
+                        Width="80"
+                        Height="30"
+                        Visibility="Collapsed"/>
+
+                <StackPanel Grid.Column="1" 
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center">
+                    <ProgressBar x:Name="ProgressBar" Height="20" Width="300" Maximum="100" Minimum="0" Value="0" Margin="5"/>
+
+                    <TextBlock x:Name="ProgressText"
+                               Text="Прогресс: 0"
+                               HorizontalAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <TextBlock Text="Итог:" FontWeight="Bold"/>
+                    <TextBlock x:Name="Sum" Text="0"
+                               FontSize="18"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Frame Grid.Row="1" 
+               x:Name="MainFrame" 
+               Source="Pages/Step1.xaml" 
+               NavigationUIVisibility="Hidden" 
+               Navigated="MainFrame_Navigated"/>
     </Grid>
 </Window>
