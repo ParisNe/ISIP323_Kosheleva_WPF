@@ -13,7 +13,6 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- Основной контент -->
         <Grid Grid.Row="0" Margin="20">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -54,9 +53,8 @@
             </StackPanel>
         </Grid>
 
-        <!-- Кнопки -->
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
-            <Button x:Name="NextButton" Content="Дальш"  Width="80" Height="30" Margin="5" Background="Green" Foreground="White"/>
+            <Button x:Name="NextButton" Content="Дальш"  Width="200" Height="45" Margin="5" Background="Green" Foreground="White"/>
         </StackPanel>
     </Grid>
 </Page>

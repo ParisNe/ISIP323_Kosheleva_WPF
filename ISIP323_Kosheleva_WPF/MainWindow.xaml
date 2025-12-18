@@ -14,7 +14,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Верхняя панель с элементами управления -->
         <Border Grid.Row="0" Background="Gray" BorderBrush="#FFCCCCCC" BorderThickness="0,0,0,1">
             <Grid Margin="10">
                 <Grid.ColumnDefinitions>
@@ -23,7 +22,6 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <!-- Кнопка Назад -->
                 <Button Grid.Column="0" 
                         x:Name="BackButton" 
                         Content="Назад" 

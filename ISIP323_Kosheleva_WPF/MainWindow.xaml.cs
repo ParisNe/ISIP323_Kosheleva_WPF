@@ -30,13 +30,10 @@ namespace ISIP323_Kosheleva_WPF
 
         private void MainFrame_Navigated(object sender, NavigationEventArgs e)
         {
-            // Управление видимостью кнопки Назад
             BackButton.Visibility = MainFrame.CanGoBack ? Visibility.Visible : Visibility.Collapsed;
 
-            // Обновление прогресса
             UpdateProgress();
 
-            // Обновление суммы (пример)
             UpdateSum();
         }
 
@@ -55,7 +52,6 @@ namespace ISIP323_Kosheleva_WPF
             string currentUri = MainFrame.Source?.ToString() ?? "";
             int progress = 0;
 
-            // Ищем прогресс для текущей страницы
             foreach (var page in pageProgressValues)
             {
                 if (currentUri.Contains(page.Key))
@@ -65,19 +61,16 @@ namespace ISIP323_Kosheleva_WPF
                 }
             }
 
-            // Устанавливаем значение прогресс-бара
             ProgressBar.Value = progress;
             ProgressText.Text = $"Прогресс: {progress}%";
         }
 
         private void UpdateSum()
         {
-            // Простая логика для примера - можно заменить на свою
             int baseValue = (int)ProgressBar.Value * 10;
             Sum.Text = baseValue.ToString();
         }
 
-        // Публичные методы для управления из других классов
         public void SetProgress(int value)
         {
             if (value >= 0 && value <= 100)

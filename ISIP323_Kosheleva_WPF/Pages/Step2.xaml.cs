@@ -10,22 +10,22 @@ namespace ISIP323_Kosheleva_WPF.Pages
     {
         private Dictionary<string, double> colorPrices = new Dictionary<string, double>
         {
-            { "PinckColor", 100000 },   // Гламурно Розовый
-            { "BlueColor", 20000 },     // Нежно голубой
-            { "BlackColor", 15000 },    // Черный
-            { "WhiteColor", 10000 },    // Белый
-            { "SilverColor", 25000 }    // Серебристый
+            { "PinckColor", 100000 },   
+            { "BlueColor", 20000 },    
+            { "BlackColor", 15000 },    
+            { "WhiteColor", 10000 },    
+            { "SilverColor", 25000 }    
         };
 
         private Dictionary<string, double> optionPrices = new Dictionary<string, double>
         {
-            { "Option1", 150000 },  // Кожаный салон
-            { "Option2", 200000 },  // Панорамная крыша
-            { "Option3", 50000 },   // Подогрев сидений
-            { "Option4", 75000 },   // Чот
-            { "Option5", 40000 },   // Что-то еще
-            { "Option6", 30000 },   // Камера заднего вида
-            { "Option7", 100000 }   // Чот крутое
+            { "Option1", 150000 },  
+            { "Option2", 200000 },  
+            { "Option3", 50000 },   
+            { "Option4", 75000 },   
+            { "Option5", 40000 },   
+            { "Option6", 30000 },   
+            { "Option7", 100000 }  
         };
 
         public Step2()
@@ -37,16 +37,13 @@ namespace ISIP323_Kosheleva_WPF.Pages
 
         private void Step2_Loaded(object sender, RoutedEventArgs e)
         {
-            // Восстанавливаем выбранные значения при загрузке страницы
             RestoreSelections();
 
-            // Обновляем прогресс в главном окне
-            UpdateMainWindowProgress(50); // 50% для шага 2
+            UpdateMainWindowProgress(50); 
         }
 
         private void RestoreSelections()
         {
-            // Восстанавливаем выбранный цвет
             if (!string.IsNullOrEmpty(Base.Color))
             {
                 switch (Base.Color)
@@ -69,7 +66,6 @@ namespace ISIP323_Kosheleva_WPF.Pages
                 }
             }
 
-            // Восстанавливаем выбранные опции
             if (Base.AddOptions != null && Base.AddOptions.Count > 0)
             {
                 foreach (var option in Base.AddOptions)
@@ -104,7 +100,6 @@ namespace ISIP323_Kosheleva_WPF.Pages
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            // Проверяем, выбран ли цвет
             if (!IsColorSelected())
             {
                 MessageBox.Show("Пожалуйста, выберите цвет автомобиля!", "Внимание",
@@ -112,13 +107,10 @@ namespace ISIP323_Kosheleva_WPF.Pages
                 return;
             }
 
-            // Сохраняем выбранный цвет
             SaveSelectedColor();
 
-            // Сохраняем выбранные опции
             SaveSelectedOptions();
 
-            // Навигация на следующий шаг (Step3)
             NavigationService?.Navigate(new Step3());
         }
 
@@ -133,11 +125,9 @@ namespace ISIP323_Kosheleva_WPF.Pages
 
         private void SaveSelectedColor()
         {
-            // Находим выбранный RadioButton
             var selectedColorRadio = FindSelectedColorRadio();
             if (selectedColorRadio != null)
             {
-                // Получаем текст из первого TextBlock в StackPanel
                 var stackPanel = selectedColorRadio.Content as StackPanel;
                 if (stackPanel?.Children[0] is TextBlock textBlock)
                 {
@@ -160,7 +150,6 @@ namespace ISIP323_Kosheleva_WPF.Pages
         {
             Base.AddOptions = new List<string>();
 
-            // Проверяем каждый CheckBox
             if (Option1.IsChecked == true) Base.AddOptions.Add("Кожаный салон (+150к)");
             if (Option2.IsChecked == true) Base.AddOptions.Add("Панорамная крыша (+200к)");
             if (Option3.IsChecked == true) Base.AddOptions.Add("Подогрев сидений (+50к)");
@@ -176,7 +165,6 @@ namespace ISIP323_Kosheleva_WPF.Pages
             mainWindow?.SetProgress(progress);
         }
 
-        // Расчет стоимости выбранных опций
         public double CalculateOptionsPrice()
         {
             double total = 0;
@@ -192,7 +180,6 @@ namespace ISIP323_Kosheleva_WPF.Pages
             return total;
         }
 
-        // Расчет стоимости цвета
         public double CalculateColorPrice()
         {
             var selectedRadio = FindSelectedColorRadio();

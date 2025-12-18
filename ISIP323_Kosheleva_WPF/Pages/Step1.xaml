@@ -14,6 +14,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
        
+        <!-- Говно!!!!-->
         <Grid Margin="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="104*"/>
@@ -27,6 +28,7 @@
                 <ColumnDefinition Width="0.25*"/>
             </Grid.ColumnDefinitions>
             
+            <!-- каритинки -->
             <StackPanel Grid.Column="0" Margin="5,0,6,0" Grid.RowSpan="3">
                 <Image  Source="/Images/1e974408d5b07d80de6e010198e886c0.jpg" x:Name="Image1"/>
                 <RadioButton Margin="5" Content="Принцесса 5.000.000р" HorizontalAlignment="Center" GroupName="ModelButton" FontSize="16" x:Name="ModelButton1" Checked="ModelButton1_Checked"/>
@@ -49,6 +51,7 @@
 
         </Grid>
 
+        <!-- невидимая часть -->
         <Grid Visibility="Collapsed" Margin="10" Grid.Row="1"  x:Name="GridBottom">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.6*" />
@@ -63,7 +66,7 @@
                     <ListBoxItem x:Name="ListBoxItem4" >mimimimimimmi +333k</ListBoxItem>
                     <ListBoxItem x:Name="ListBoxItem5">legendary +250k</ListBoxItem>
                 </ListBox>
-                <Label FontSize="20" x:Name="tb" Content="Вы выбрали: "/>
+                <Label FontSize="20" FontWeight="Bold" x:Name="tb" Content="Вы выбрали: "/>
             </StackPanel>
 
             <Button Visibility="Collapsed" x:Name="ButtonNext" VerticalAlignment="Bottom"  

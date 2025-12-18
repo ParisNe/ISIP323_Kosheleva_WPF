@@ -60,7 +60,7 @@
                 
             </StackPanel>
 
-            <!-- Опции -->
+            <!-- Доп чота -->
             <StackPanel Grid.Column="1">
                 <TextBlock Text="Дополнительные опции:" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
                 <CheckBox x:Name="Option1" Content="Кожаный салон (+150к)" Margin="5"/>
