@@ -24,73 +24,53 @@ namespace ISIP323_Kosheleva_WPF.Pages
         {
             InitializeComponent();
             Loaded += Step4_Loaded;
-            DownSlider.ValueChanged += Slider_ValueChanged;
-            TermSlider.ValueChanged += Slider_ValueChanged;
             NextButton.Click += NextButton_Click;
         }
 
         private void Step4_Loaded(object sender, RoutedEventArgs e)
         {
-            // Устанавливаем годовую ставку
-            Base.r = 12; // 12% годовых
+            CarPriceText.Text = Base.TotalPrice.ToString("N0") + " ₽";
 
-            CarPriceText.Text = $"{Base.C:N0} ₽";
-            UpdateCalculations();
+            DownSlider.Value = Base.LoanPercent;
+            TermSlider.Value = Base.LoanTermMonths;
+
+            DownSlider.ValueChanged += Slider_ValueChanged;
+            TermSlider.ValueChanged += Slider_ValueChanged;
+
+            CalculateLoan();
         }
 
-        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void Slider_ValueChanged(object sender, RoutedEventArgs e)
         {
-            UpdateCalculations();
+            Base.LoanPercent = DownSlider.Value;
+            Base.LoanTermMonths = (int)TermSlider.Value;
+
+            DownPercentText.Text = Base.LoanPercent.ToString("0") + "%";
+            TermText.Text = Base.LoanTermMonths.ToString() + " месяцев";
+
+            CalculateLoan();
         }
 
-        private void UpdateCalculations()
+        private void CalculateLoan()
         {
-            // Процент первоначального взноса
-            double downPercent = DownSlider.Value;
-            DownPercentText.Text = $"{downPercent:F0}%";
+            Base.CalculateLoan();
 
-            // Сумма первоначального взноса
-            double downAmount = Base.C * (downPercent / 100);
-            DownAmountText.Text = $"{downAmount:N0} ₽";
-
-            // Сумма кредита
-            double loanAmount = Base.C - downAmount;
-            LoanAmountText.Text = $"{loanAmount:N0} ₽";
-
-            // Срок кредита в месяцах
-            int termMonths = (int)TermSlider.Value;
-            TermText.Text = $"{termMonths} месяцев";
-
-            // Расчет ежемесячного платежа (аннуитетный)
-            double monthlyPayment = CalculateMonthlyPayment(loanAmount, Base.r, termMonths);
-            MonthlyText.Text = $"{monthlyPayment:N0} ₽";
-
-            // Общая переплата
-            double totalPayment = monthlyPayment * termMonths;
+            double downPayment = Base.TotalPrice * Base.LoanPercent / 100;
+            double loanAmount = Base.TotalPrice - downPayment;
+            double totalPayment = Base.MonthlyPayment * Base.LoanTermMonths;
             double overpayment = totalPayment - loanAmount;
-            OverpaymentText.Text = $"{overpayment:N0} ₽";
-        }
 
-        private double CalculateMonthlyPayment(double loanAmount, double annualRate, int months)
-        {
-            // Формула аннуитетного платежа
-            double monthlyRate = (annualRate / 100) / 12;
-            double coefficient = (monthlyRate * Math.Pow(1 + monthlyRate, months)) /
-                                 (Math.Pow(1 + monthlyRate, months) - 1);
-
-            return loanAmount * coefficient;
+            DownAmountText.Text = downPayment.ToString("N0") + " ₽";
+            LoanAmountText.Text = loanAmount.ToString("N0") + " ₽";
+            MonthlyText.Text = Base.MonthlyPayment.ToString("N0") + " ₽";
+            OverpaymentText.Text = overpayment.ToString("N0") + " ₽";
         }
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Base.C == 0)
-            {
-                MessageBox.Show("Стоимость автомобиля не определена!", "Ошибка",
-                                MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-
-            NavigationService?.Navigate(new Step5());
+            var mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.GoToNextStep("Step5");
         }
+
     }
 }

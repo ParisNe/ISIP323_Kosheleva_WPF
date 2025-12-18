@@ -18,89 +18,72 @@ namespace ISIP323_Kosheleva_WPF.Pages
     /// <summary>
     /// Логика взаимодействия для Step1.xaml
     /// </summary>
-    public partial class Step1 : Page
-    {
-        public Step1()
+        public partial class Step1 : Page
         {
-            InitializeComponent();
-        }
-
-        private void SaveModelSelection(string modelName, double price)
-        {
-            Base.Model = modelName;
-            // Можно сохранить базовую цену в статическом поле если нужно
-            // Base.BasePrice = price;
-
-            // Обновляем сумму в основном окне
-            var mainWindow = Application.Current.MainWindow as MainWindow;
-            if (mainWindow != null)
+            public Step1()
             {
-                // Устанавливаем прогресс на 25%
-                mainWindow.SetProgress(25);
+                InitializeComponent();
+            }
 
-                // Обновляем сумму (можно сделать расчет на основе цены)
-                mainWindow.SetSum((int)(price / 10000)); // Просто пример расчета
+            private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+            {
+                if ((sender as ListBox).SelectedItem is ListBoxItem choice)
+                {
+                    string selectedEngine = choice.Content.ToString();
+                    tb.Content = "Вы выбрали: " + selectedEngine;
+                    Base.EngineType = selectedEngine;
+
+                    if (selectedEngine.Contains("norm")) Base.EnginePrice = 50000;
+                    else if (selectedEngine.Contains("rare")) Base.EnginePrice = 65000;
+                    else if (selectedEngine.Contains("epic")) Base.EnginePrice = 100000;
+                    else if (selectedEngine.Contains("mimimi")) Base.EnginePrice = 333000;
+                    else if (selectedEngine.Contains("legendary")) Base.EnginePrice = 250000;
+
+                    ButtonNext.Visibility = Visibility.Visible;
+                }
+            }
+
+            private void ButtonNext_Click(object sender, RoutedEventArgs e)
+            {
+                if (!string.IsNullOrEmpty(Base.Model) && !string.IsNullOrEmpty(Base.EngineType))
+                {
+                    var mainWindow = (MainWindow)Application.Current.MainWindow;
+                    mainWindow.GoToNextStep("Step2");
+                }
+                else
+                {
+                    MessageBox.Show("Выберите модель и тип двигателя!");
+                }
+            }
+
+            private void ModelButton1_Checked(object sender, RoutedEventArgs e)
+            {
+                Base.Model = "Принцесса";
+                Base.ModelBasePrice = 5000000;
+                GridBottom.Visibility = Visibility.Visible;
+            }
+
+            private void ModelButton2_Checked(object sender, RoutedEventArgs e)
+            {
+                Base.Model = "Бэха";
+                Base.ModelBasePrice = 1450999;
+                GridBottom.Visibility = Visibility.Visible;
+            }
+
+            private void ModelButton3_Checked(object sender, RoutedEventArgs e)
+            {
+                Base.Model = "Скороход";
+                Base.ModelBasePrice = 2280000;
+                GridBottom.Visibility = Visibility.Visible;
+            }
+
+            private void ModelButton4_Checked(object sender, RoutedEventArgs e)
+            {
+                Base.Model = "Москвич обычный";
+                Base.ModelBasePrice = 1488000;
+                GridBottom.Visibility = Visibility.Visible;
             }
         }
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if ((sender as ListBox).SelectedItem is ListBoxItem choice)
-            {
-                string selectedEngine = choice.Content.ToString();
-                tb.Content = "Вы выбрали: " + selectedEngine;
-                Base.EngineType = selectedEngine;
-
-                // Показываем кнопку тока когда выбрали двигатель
-                ButtonNext.Visibility = Visibility.Visible;
-            }
-        }
-
-        private void ModelButton1_Checked(object sender, RoutedEventArgs e)
-        {
-            BossImage.Source = Image1.Source;
-            GridBottom.Visibility = Visibility.Visible;
-            SaveModelSelection("Принцесса 5.000.000р", 5000000);
-        }
-
-        private void ModelButton2_Checked(object sender, RoutedEventArgs e)
-        {
-            BossImage.Source = Image2.Source;
-            GridBottom.Visibility = Visibility.Visible;
-            SaveModelSelection("Бэха 1.450.999р", 1450999);
-        }
-
-        private void ModelButton3_Checked(object sender, RoutedEventArgs e)
-        {
-            BossImage.Source = Image3.Source;
-            GridBottom.Visibility = Visibility.Visible;
-            SaveModelSelection("Скороход 2.280.000р", 2280000);
-        }
-
-        private void ModelButton4_Checked(object sender, RoutedEventArgs e)
-        {
-            BossImage.Source = Image4.Source;
-            GridBottom.Visibility = Visibility.Visible;
-            SaveModelSelection("Москвич обычный 1.488.000р", 1488000);
-        }
-
-        private void ButtonNext_Click(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(Base.EngineType))
-            {
-                MessageBox.Show("Выберите тип двигателя!", "Внимание",
-                                MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            if (string.IsNullOrEmpty(Base.Model))
-            {
-                MessageBox.Show("Выберите модель автомобиля!", "Внимание",
-                                MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            NavigationService?.Navigate(new Step2());
-        }
     }
-}
+

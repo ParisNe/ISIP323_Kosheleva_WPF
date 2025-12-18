@@ -19,7 +19,6 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Данные -->
             <StackPanel Grid.Column="0">
                 <TextBlock Text="Ваши данные:" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
 
@@ -33,7 +32,6 @@
                 <TextBox x:Name="EmailBox" Height="25" Margin="0,0,0,10"/>
             </StackPanel>
 
-            <!-- Вывод всего -->
             <StackPanel Grid.Column="1">
                 <TextBlock Text="Сводка заказа:" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
 
@@ -48,8 +46,11 @@
             </StackPanel>
         </Grid>
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
-            <Button x:Name="SubmitButton" Content="Готово" Width="200" Height="45" Margin="5" Background="Green" Foreground="White" IsEnabled="False"/>
-        </StackPanel>
+        <Border Grid.Row="1" Background="#F0F0F0" Padding="20">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="SubmitButton" Content="Отправить" Width="100" Height="30" Background="#0078D4" Foreground="White" VerticalAlignment="Bottom" Click="SubmitButton_Click" IsEnabled="False"/>
+            </StackPanel>
+        </Border>
+
     </Grid>
 </Page>

@@ -19,7 +19,6 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
                 <Button Grid.Column="0" 
@@ -38,12 +37,6 @@
                     <TextBlock x:Name="ProgressText"
                                Text="Прогресс: 0"
                                HorizontalAlignment="Center"/>
-                </StackPanel>
-
-                <StackPanel Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center">
-                    <TextBlock Text="Итог:" FontWeight="Bold"/>
-                    <TextBlock x:Name="Sum" Text="0"
-                               FontSize="18"/>
                 </StackPanel>
             </Grid>
         </Border>
