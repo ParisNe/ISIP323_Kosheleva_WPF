@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ISIP323_Kosheleva_WPF.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,14 @@ namespace ISIP323_Kosheleva_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public partial class MainWindow : Window
         {
-            InitializeComponent();
+            public static Users CurrentUser = null;
+
+            public MainWindow()
+            {
+                InitializeComponent();
+                MainFrame.Navigate(new MainPage());
+            }
         }
     }
-}
