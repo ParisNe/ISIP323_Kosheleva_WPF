@@ -8,5 +8,6 @@ namespace ISIP323_Kosheleva_WPF
 {
     internal class Core
     {
+        public static   
     }
 }

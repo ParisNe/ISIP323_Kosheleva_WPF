@@ -61,6 +61,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Seats.cs" />
+    <Compile Include="Sessions.cs" />
+    <Compile Include="Users.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -109,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MovieGenres.cs" />
+    <Compile Include="Movies.cs" />
     <Compile Include="Pages\BookingPage.xaml.cs">
       <DependentUpon>BookingPage.xaml</DependentUpon>
     </Compile>
