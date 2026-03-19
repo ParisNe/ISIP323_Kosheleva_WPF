@@ -10,7 +10,6 @@
 
         <Frame Grid.Row="1" 
                x:Name="MainFrame" 
-               Source="Pages/Step1.xaml" 
-               Navigated="MainFrame_Navigated"/>
+               NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
