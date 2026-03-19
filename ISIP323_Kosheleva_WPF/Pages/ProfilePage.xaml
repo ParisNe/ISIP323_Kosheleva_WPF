@@ -13,14 +13,14 @@
             <TextBlock Text="Личный кабинет" FontSize="20" Margin="10"/>
 
                 <StackPanel>
-                    <TextBlock Text="Информация об аккаунте:" Margin="5"/>
+                    <TextBlock Text="Информация об аккаунте:" FontSize="20" Margin="5"/>
                     <TextBlock x:Name="UsernameText" Margin="0,2"/>
                     <TextBlock x:Name="EmailText" Margin="0,2"/>
                     <TextBlock x:Name="FullNameText" Margin="0,2"/>
                     <TextBlock x:Name="RegDateText" Margin="0,2"/>
                 </StackPanel>
 
-            <TextBlock Text="Мои билеты:" Margin="5"/>
+            <TextBlock Text="Мои билеты:" FontSize="20" Margin="5"/>
 
             <ListBox x:Name="BookingsList" Margin="5" HorizontalAlignment="Left" Height="Auto" Width="Auto">
                 <ListBox.ItemTemplate>

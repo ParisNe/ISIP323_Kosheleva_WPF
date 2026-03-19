@@ -8,7 +8,7 @@
         Title="SessionPage" Height="450" Width="800">
     <ScrollViewer>
         <StackPanel Margin="10">
-            <Button Content="← Назад" Click="Back_Click" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+            <Button Content="Back" Height="30" Width="55" FontSize="20" Click="Back_Click" HorizontalAlignment="Left"/>
 
             <TextBlock x:Name="SessionInfo" FontSize="16" FontWeight="Bold" Margin="5"/>
 
