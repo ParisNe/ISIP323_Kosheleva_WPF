@@ -12,27 +12,18 @@ namespace ISIP323_Kosheleva_WPF
     using System;
     using System.Collections.Generic;
     
-    public partial class Movies
+    public partial class Genres
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Movies()
+        public Genres()
         {
             this.MovieGenres = new HashSet<MovieGenres>();
-            this.Sessions = new HashSet<Sessions>();
         }
     
-        public int MovieID { get; set; }
-        public string Title { get; set; }
-        public string Discription { get; set; }
-        public decimal Raiting { get; set; }
-        public string PosterPath { get; set; }
-        public System.DateTime StartDate { get; set; }
-        public int AgeRaitingID { get; set; }
+        public int GenreID { get; set; }
+        public string GenreName { get; set; }
     
-        public virtual AgeRating AgeRating { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MovieGenres> MovieGenres { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sessions> Sessions { get; set; }
     }
 }

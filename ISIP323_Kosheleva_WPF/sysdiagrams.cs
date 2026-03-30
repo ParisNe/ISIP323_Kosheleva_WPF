@@ -12,13 +12,12 @@ namespace ISIP323_Kosheleva_WPF
     using System;
     using System.Collections.Generic;
     
-    public partial class MovieGenres
+    public partial class sysdiagrams
     {
-        public int MovieID { get; set; }
-        public int GenreID { get; set; }
-        public string Description { get; set; }
-    
-        public virtual Genres Genres { get; set; }
-        public virtual Movies Movies { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }
