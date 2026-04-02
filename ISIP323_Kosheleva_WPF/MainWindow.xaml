@@ -9,6 +9,8 @@
         WindowStartupLocation="CenterScreen">
 
     <Grid>
-        <TextBlock> </TextBlock>
+        <TextBlock> 
+            
+        </TextBlock>
     </Grid>
 </Window>
