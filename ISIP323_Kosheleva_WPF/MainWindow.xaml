@@ -9,42 +9,6 @@
         WindowStartupLocation="CenterScreen">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <Border Grid.Row="0" Background="Gray" BorderBrush="#FFCCCCCC" BorderThickness="0,0,0,1">
-            <Grid Margin="10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <Button Grid.Column="0" 
-                        x:Name="BackButton" 
-                        Content="Назад" 
-                        Click="BackButton_OnClick"
-                        Width="80"
-                        Height="30"
-                        Visibility="Collapsed"/>
-
-                <StackPanel Grid.Column="1" 
-                            HorizontalAlignment="Center" 
-                            VerticalAlignment="Center">
-                    <ProgressBar x:Name="ProgressBar" Height="20" Width="300" Maximum="100" Minimum="0" Value="0" Margin="5"/>
-
-                    <TextBlock x:Name="ProgressText"
-                               Text="Прогресс: 0"
-                               HorizontalAlignment="Center"/>
-                </StackPanel>
-            </Grid>
-        </Border>
-
-        <Frame Grid.Row="1" 
-               x:Name="MainFrame" 
-               Source="Pages/Step1.xaml" 
-               NavigationUIVisibility="Hidden" 
-               Navigated="MainFrame_Navigated"/>
+        <TextBlock> </TextBlock>
     </Grid>
 </Window>
