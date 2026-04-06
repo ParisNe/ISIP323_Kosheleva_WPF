@@ -21,15 +21,12 @@ namespace ISIP323_Kosheleva_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        public partial class MainWindow : Window
-        {
-            public static Users CurrentUser = null;
+        public static Users CurrentUser = null;
 
-            public MainWindow()
-            {
-                InitializeComponent();
-                MainFrame.Navigate(new MainPage());
-            }
+        public MainWindow()
+        {
+            InitializeComponent();
+            MainFrame.Navigate(new MainPage());
         }
     }
 }
