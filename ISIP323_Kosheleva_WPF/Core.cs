@@ -9,6 +9,6 @@ namespace ISIP323_Kosheleva_WPF
 {
     internal class Core
     {
-        public static SoapEntities Context = new SoapEntities();
+        public static PrSDADIMkadatoEntities Context = new PrSDADIMkadatoEntities();
     }
 }

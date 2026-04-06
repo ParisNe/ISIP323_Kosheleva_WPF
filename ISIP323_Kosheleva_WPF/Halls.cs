@@ -21,10 +21,10 @@ namespace ISIP323_Kosheleva_WPF
             this.Sessions = new HashSet<Sessions>();
         }
     
-        public int HellID { get; set; }
-        public string HellName { get; set; }
-        public decimal HellRating { get; set; }
-        public int TotalSessions { get; set; }
+        public int HallID { get; set; }
+        public string HallName { get; set; }
+        public Nullable<int> HallRating { get; set; }
+        public int TotalSeats { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Seats> Seats { get; set; }

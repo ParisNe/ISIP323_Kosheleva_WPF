@@ -13,10 +13,10 @@ namespace ISIP323_Kosheleva_WPF
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities1 : DbContext
+    public partial class PrSDADIMkadatoEntities : DbContext
     {
-        public Entities1()
-            : base("name=Entities1")
+        public PrSDADIMkadatoEntities()
+            : base("name=PrSDADIMkadatoEntities")
         {
         }
     
@@ -25,7 +25,7 @@ namespace ISIP323_Kosheleva_WPF
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<AgeRating> AgeRating { get; set; }
+        public virtual DbSet<AgeRatings> AgeRatings { get; set; }
         public virtual DbSet<Bookings> Bookings { get; set; }
         public virtual DbSet<Genres> Genres { get; set; }
         public virtual DbSet<Halls> Halls { get; set; }

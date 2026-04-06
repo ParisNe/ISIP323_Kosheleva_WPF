@@ -20,11 +20,11 @@ namespace ISIP323_Kosheleva_WPF
             this.Bookings = new HashSet<Bookings>();
         }
     
-        public int SeatsID { get; set; }
-        public int HallID { get; set; }
+        public int SeatID { get; set; }
+        public Nullable<int> HallID { get; set; }
         public int SeatRow { get; set; }
         public int SeatNumber { get; set; }
-        public bool IsActive { get; set; }
+        public Nullable<bool> IsAvailable { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bookings> Bookings { get; set; }

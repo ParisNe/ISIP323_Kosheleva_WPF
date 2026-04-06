@@ -21,11 +21,11 @@ namespace ISIP323_Kosheleva_WPF
         }
     
         public int SessionID { get; set; }
-        public int MovieID { get; set; }
-        public int HallID { get; set; }
+        public Nullable<int> MovieID { get; set; }
+        public Nullable<int> HallID { get; set; }
         public System.DateTime SessionDate { get; set; }
         public System.TimeSpan SessionTime { get; set; }
-        public int Price { get; set; }
+        public decimal Price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bookings> Bookings { get; set; }

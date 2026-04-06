@@ -15,11 +15,11 @@ namespace ISIP323_Kosheleva_WPF
     public partial class Bookings
     {
         public int BookingID { get; set; }
-        public int UserID { get; set; }
-        public int SessionID { get; set; }
-        public int SeatID { get; set; }
-        public System.DateTime BookingDate { get; set; }
-        public bool IsActive { get; set; }
+        public Nullable<int> UserID { get; set; }
+        public Nullable<int> SessionID { get; set; }
+        public Nullable<int> SeatID { get; set; }
+        public Nullable<System.DateTime> BookingDate { get; set; }
+        public Nullable<bool> IsActive { get; set; }
     
         public virtual Seats Seats { get; set; }
         public virtual Sessions Sessions { get; set; }
